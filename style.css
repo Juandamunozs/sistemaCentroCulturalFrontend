@@ -1,0 +1,47 @@
+/* style.css */
+
+/* Estilos para los botones */
+button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para el contenedor principal */
+.container {
+    margin: 20px auto;
+    width: 80%;
+}
+
+/* Estilos para la tabla dentro del contenedor */
+.container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Estilos para las celdas de encabezado y datos */
+.container th, .container td {
+    padding: 12px; /* Aumentando el espacio de relleno para un aspecto más aireado */
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Estilos para las celdas de encabezado */
+.container th {
+    background-color: #f2f2f2;
+}
+
+/* Estilos para filas pares */
+.container tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
