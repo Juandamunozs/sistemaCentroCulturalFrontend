@@ -28,7 +28,7 @@ try {
         }
     } else {
         // El nombre de la época no existe, mostrar mensaje de error
-        echo "No existe una época con ese nombre en la base de datos.";
+        echo "No existe esa epoca";
     }
 } catch (PDOException $e) {
     // Manejo de errores en caso de que falle la consulta o la eliminación
