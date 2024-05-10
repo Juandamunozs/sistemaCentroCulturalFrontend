@@ -25,7 +25,7 @@
             if ($query->rowCount() > 0) {
                 // Mostrar los datos en forma de tabla
                 echo '<table>';
-                echo '<tr><th>Nombre Instrumento</th><th>Creador</th><th>Lugar de creación</th><th>Tipo</th><th>Material</th><th>Foto</th></tr>';
+                echo '<tr><th>Nombre Instrumento</th><th>Creador</th><th>Lugar de creación</th><th>Tipo</th><th>Material</th><th>Imagen del instrumento</th></tr>';
                 foreach ($consulta as $registro) {
                     echo '<tr>';
                     echo '<td>' . $registro->nombre_instrumento . '</td>';
