@@ -17,9 +17,9 @@ try {
 
     // Verificar si se insertó correctamente
     if ($comando->rowCount() > 0) {
-        echo "¡Datos insertados correctamente!";
+        echo "¡Datos insertados!";
     } else {
-        echo "No se pudo insertar los datos.";
+        echo "No se pudo insertar";
     }
 } catch (PDOException $e) {
     // Manejo de errores en caso de que falle la inserción

@@ -21,13 +21,13 @@ try {
         $comando->execute([$nombreBorrarActualizar]);
         
         if ($comando->rowCount() > 0) {
-            echo "¡Datos borrados correctamente!";
+            echo "¡Datos borrados!";
         } else {
-            echo "No se pudo borrar los datos.";
+            echo "No se pudo borrar";
         }
     } else {
         // El nombre de la época no existe, mostrar mensaje de error
-        echo "No existe esa epoca";
+        echo "No existe esa obra";
     }
 } catch (PDOException $e) {
     // Manejo de errores en caso de que falle la consulta o la eliminación
