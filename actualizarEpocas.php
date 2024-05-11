@@ -6,6 +6,7 @@ $nombre_epoca = $_GET['nombre_epoca'];
 $caracteristica_e = $_GET['caracteristica_e'];
 $comienzo = $_GET['comienzo'];
 $final = $_GET['final'];
+$foto = $_GET['foto'];
 $nombreBorrarActualizar = $_GET['nombreBorrarActualizar'];
 
 try {
@@ -17,12 +18,12 @@ try {
 
     if ($resultado['total'] > 0) {
         // El nombre de la época existe, por lo tanto, actualiza los datos
-        $sql = "UPDATE epoca SET nombre_epoca=?, caracteristica_e=?, comienzo=?, final=? WHERE nombre_epoca=?";
+        $sql = "UPDATE epoca SET nombre_epoca=?, caracteristica_e=?, comienzo=?, final=?, foto=? WHERE nombre_epoca=?";
         $comando = $pdo->prepare($sql);
-        $comando->execute([$nombre_epoca, $caracteristica_e, $comienzo, $final, $nombreBorrarActualizar]);
+        $comando->execute([$nombre_epoca, $caracteristica_e, $comienzo, $final, $foto, $nombreBorrarActualizar]);
         
         if ($comando->rowCount() > 0) {
-            echo "¡Actualizado correctamente!";
+            echo "¡Actualizado!";
         } else {
             echo "No se pudo actualizar";
         }

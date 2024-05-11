@@ -5,14 +5,15 @@ include 'conectar.php';
 $nombre_genero = $_GET['nombre_genero'];
 $caracteristica_g = $_GET['caracteristica_g'];
 $origen = $_GET['origen'];
+$foto = $_GET['foto'];
 
 try {
     // Preparar la instrucción de inserción
-    $sql = "INSERT INTO genero (nombre_genero, caracteristica_g, origen) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO genero (nombre_genero, caracteristica_g, origen, foto) VALUES (?, ?, ?, ?)";
     $comando = $pdo->prepare($sql);
     
     // Ejecutar la instrucción de inserción
-    $comando->execute([$nombre_genero, $caracteristica_g, $origen]);
+    $comando->execute([$nombre_genero, $caracteristica_g, $origen, $foto]);
 
     // Verificar si se insertó correctamente
     if ($comando->rowCount() > 0) {

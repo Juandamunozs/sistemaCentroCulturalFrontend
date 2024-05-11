@@ -6,14 +6,15 @@ $nombre_musico = $_GET['nombre_musico'];
 $fecha_nac = $_GET['fecha_nac'];
 $fecha_muerte = $_GET['fecha_muerte'];
 $historia_de_vida = $_GET['historia_de_vida'];
+$foto = $_GET['foto'];
 
 try {
     // Preparar la instrucción de inserción
-    $sql = "INSERT INTO musico (nombre_musico, fecha_nac, fecha_muerte, historia_de_vida) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO musico (nombre_musico, fecha_nac, fecha_muerte, historia_de_vida, foto) VALUES (?, ?, ?, ?, ?)";
     $comando = $pdo->prepare($sql);
     
     // Ejecutar la instrucción de inserción
-    $comando->execute([$nombre_musico, $fecha_nac, $fecha_muerte, $historia_de_vida]);
+    $comando->execute([$nombre_musico, $fecha_nac, $fecha_muerte, $historia_de_vida, $foto]);
 
     // Verificar si se insertó correctamente
     if ($comando->rowCount() > 0) {

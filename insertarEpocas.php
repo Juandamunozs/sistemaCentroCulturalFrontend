@@ -6,14 +6,14 @@ $nombre_epoca = $_GET['nombre_epoca'];
 $caracteristica_e = $_GET['caracteristica_e'];
 $comienzo = $_GET['comienzo'];
 $final = $_GET['final'];
-
+$foto = $_GET['foto'];
 try {
     // Preparar la instrucción de inserción
-    $sql = "INSERT INTO epoca (nombre_epoca, caracteristica_e, comienzo, final) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO epoca (nombre_epoca, caracteristica_e, comienzo, final, foto) VALUES (?, ?, ?, ?, ?)";
     $comando = $pdo->prepare($sql);
     
     // Ejecutar la instrucción de inserción
-    $comando->execute([$nombre_epoca, $caracteristica_e, $comienzo, $final]);
+    $comando->execute([$nombre_epoca, $caracteristica_e, $comienzo, $final, $foto]);
 
     // Verificar si se insertó correctamente
     if ($comando->rowCount() > 0) {

@@ -5,14 +5,15 @@ include 'conectar.php';
 $nombre_obra = $_GET['nombre_obra'];
 $partitura = $_GET['partitura'];
 $ano_creacion = $_GET['ano_creacion'];
+$foto = $_GET['foto'];
 
 try {
     // Preparar la instrucción de inserción
-    $sql = "INSERT INTO obra_famosa (nombre_obra, partitura, ano_creacion) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO obra_famosa (nombre_obra, partitura, ano_creacion, foto) VALUES (?, ?, ?, ?)";
     $comando = $pdo->prepare($sql);
     
     // Ejecutar la instrucción de inserción
-    $comando->execute([$nombre_obra, $partitura, $ano_creacion]);
+    $comando->execute([$nombre_obra, $partitura, $ano_creacion, $foto]);
 
     // Verificar si se insertó correctamente
     if ($comando->rowCount() > 0) {

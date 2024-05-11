@@ -24,7 +24,7 @@ try {
         $comando->execute([$nombre_instrumento, $creador, $lugar_creacion, $tipo, $material, $foto, $nombreBorrarActualizar]);
         
         if ($comando->rowCount() > 0) {
-            echo "¡Actualizado correctamente!";
+            echo "¡Actualizado!";
         } else {
             echo "No se pudo actualizar";
         }

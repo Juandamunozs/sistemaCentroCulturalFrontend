@@ -5,6 +5,7 @@ include 'conectar.php';
 $nombre_genero = $_GET['nombre_genero'];
 $caracteristica_g = $_GET['caracteristica_g'];
 $origen = $_GET['origen'];
+$foto = $_GET['foto'];
 $nombreBorrarActualizar = $_GET['nombreBorrarActualizar'];
 
 try {
@@ -16,12 +17,12 @@ try {
 
     if ($resultado['total'] > 0) {
         // El nombre de la época existe, por lo tanto, actualiza los datos
-        $sql = "UPDATE genero SET nombre_genero=?, caracteristica_g=?, origen=? WHERE nombre_genero=?";
+        $sql = "UPDATE genero SET nombre_genero=?, caracteristica_g=?, origen=?, foto=? WHERE nombre_genero=?";
         $comando = $pdo->prepare($sql);
-        $comando->execute([$nombre_genero, $caracteristica_g, $origen, $nombreBorrarActualizar]);
+        $comando->execute([$nombre_genero, $caracteristica_g, $origen, $foto, $nombreBorrarActualizar]);
         
         if ($comando->rowCount() > 0) {
-            echo "¡Actualizado correctamente!";
+            echo "¡Actualizado!";
         } else {
             echo "No se pudo actualizar";
         }

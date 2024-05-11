@@ -6,6 +6,7 @@ $nombre_obra = $_GET['nombre_obra'];
 $partitura = $_GET['partitura'];
 $ano_creacion = $_GET['ano_creacion'];
 $nombreBorrarActualizar = $_GET['nombreBorrarActualizar'];
+$foto = $_GET['foto'];
 
 try {
     // Verificar si el nombre de la época existe en la base de datos
@@ -16,12 +17,12 @@ try {
 
     if ($resultado['total'] > 0) {
         // El nombre de la época existe, por lo tanto, actualiza los datos
-        $sql = "UPDATE obra_famosa SET nombre_obra=?, partitura=?, ano_creacion=? WHERE nombre_obra=?";
+        $sql = "UPDATE obra_famosa SET nombre_obra=?, partitura=?, ano_creacion=?, foto=? WHERE nombre_obra=?";
         $comando = $pdo->prepare($sql);
-        $comando->execute([$nombre_obra, $partitura, $ano_creacion, $nombreBorrarActualizar]);
+        $comando->execute([$nombre_obra, $partitura, $ano_creacion, $foto, $nombreBorrarActualizar]);
         
         if ($comando->rowCount() > 0) {
-            echo "¡Actualizado correctamente!";
+            echo "¡Actualizado!";
         } else {
             echo "No se pudo actualizar";
         }
