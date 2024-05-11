@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mostrar Datos de Musicos</title>
+    <title>Musicos</title>
     <link rel="stylesheet" href="style.css"> <!-- Incluye tu archivo CSS externo -->
 </head>
 <body>
