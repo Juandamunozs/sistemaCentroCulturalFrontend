@@ -63,13 +63,8 @@
 </style>
 </head>
 <body>
-<h1 class="title">Información de epoca</h1>
+    <h1 class="title">Información de Épocas</h1>
     <button id="button1">Regresar</button>
-        <script>
-            document.getElementById("button1").addEventListener("click", function() {
-                window.location.href = "index.html";
-            });
-        </script>
     <div class="container">
         <?php
         include 'conectar.php';
@@ -89,10 +84,11 @@
                 foreach ($consulta as $registro) {
                     echo '<div class="card">';
                     echo '<h2>' . $registro->nombre_epoca . '</h2>';
-                    echo '<img src="' . $registro->foto . '" alt="No hay imagen de la epoca" style="width: 250px; height: 200px;">';
+                    echo '<img src="' . $registro->foto . '" alt="No hay imagen de la época" style="width: 250px; height: 200px;">';
                     echo '<p><strong>Característica:</strong> ' . $registro->caracteristica_e . '</p>';
-                    echo '<p><strong>Inicio:</strong> ' . $registro->comienzo . '</p>';
-                    echo '<p><strong>Fin:</strong> ' . $registro->final . '</p>';
+                    echo '<p><strong>Comienzo:</strong> ' . $registro->comienzo . '</p>';
+                    echo '<p><strong>Final:</strong> ' . $registro->final . '</p>';
+                    echo '<a href="generosDeLaEpoca.php?epoca=' . urlencode($registro->comienzo. ',' . $registro->final) . '">Generos de la epoca</a>';
                     echo '</div>';
                 }
             } else {
@@ -104,8 +100,10 @@
         }
         ?>
     </div>
-    <footer>
-      
-    </footer>
+    <script>
+        document.getElementById("button1").addEventListener("click", function() {
+            window.location.href = "index.html";
+        });
+    </script>
 </body>
 </html>

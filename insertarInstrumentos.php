@@ -7,14 +7,15 @@ $creador = $_GET['creador'];
 $lugar_creacion = $_GET['lugar_creacion'];
 $tipo = $_GET['tipo'];
 $material = $_GET['material'];
+$genero = $_GET['genero'];
 $foto = $_GET['foto'];
 try {
     // Preparar la instrucción de inserción
-    $sql = "INSERT INTO instrumento (nombre_instrumento, creador, lugar_creacion, tipo, material, foto) VALUES (?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO instrumento (nombre_instrumento, creador, lugar_creacion, tipo, material, foto, genero) VALUES (?, ?, ?, ?, ?, ?, ?)";
     $comando = $pdo->prepare($sql);
     
     // Ejecutar la instrucción de inserción
-    $comando->execute([$nombre_instrumento, $creador, $lugar_creacion, $tipo, $material, $foto]);
+    $comando->execute([$nombre_instrumento, $creador, $lugar_creacion, $tipo, $material, $foto, $genero]);
 
     // Verificar si se insertó correctamente
     if ($comando->rowCount() > 0) {

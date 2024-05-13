@@ -8,6 +8,8 @@ $lugar_creacion = $_GET['lugar_creacion'];
 $tipo = $_GET['tipo'];
 $material = $_GET['material'];
 $foto = $_GET['foto'];
+$genero = $_GET['genero'];
+
 $nombreBorrarActualizar = $_GET['nombreBorrarActualizar'];
 
 try {
@@ -19,9 +21,9 @@ try {
 
     if ($resultado['total'] > 0) {
         // El nombre de la época existe, por lo tanto, actualiza los datos
-        $sql = "UPDATE instrumento SET nombre_instrumento=?, creador=?, lugar_creacion=?, tipo=?, material=?, foto=? WHERE nombre_instrumento=?";
+        $sql = "UPDATE instrumento SET nombre_instrumento=?, creador=?, lugar_creacion=?, tipo=?, material=?, foto=?, genero=? WHERE nombre_instrumento=?";
         $comando = $pdo->prepare($sql);
-        $comando->execute([$nombre_instrumento, $creador, $lugar_creacion, $tipo, $material, $foto, $nombreBorrarActualizar]);
+        $comando->execute([$nombre_instrumento, $creador, $lugar_creacion, $tipo, $material, $foto, $genero, $nombreBorrarActualizar]);
         
         if ($comando->rowCount() > 0) {
             echo "¡Actualizado!";

@@ -76,7 +76,7 @@
 
         try {
             // Obtener registros de la tabla obra_famosa
-            $sql = "SELECT nombre_obra, partitura, ano_creacion, foto FROM obra_famosa";
+            $sql = "SELECT nombre_obra, partitura, ano_creacion, foto, musico, genero FROM obra_famosa";
             $query = $pdo->prepare($sql);
             $query->execute();
 
@@ -92,6 +92,9 @@
                     echo '<img src="' . $registro->foto . '" alt="No hay imagen de la obra" style="width: 250px; height: 200px;">';
                     echo '<p><strong>Partitura:</strong> ' . $registro->partitura . '</p>';
                     echo '<p><strong>Año de creación:</strong> ' . $registro->ano_creacion . '</p>';
+                    echo '<p><strong>Musico:</strong> ' . $registro->musico . '</p>';
+                    echo '<p><strong>Genero:</strong> ' . $registro->genero . '</p>';
+                    echo '<a href="obraAmusicoGenero.php?dato=' . urlencode($registro->musico. ',' . $registro->genero) . '">Musico y genero de la obra</a>';
                     echo '</div>';
                 }
             } else {

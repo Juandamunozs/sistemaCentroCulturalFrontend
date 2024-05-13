@@ -76,7 +76,7 @@
 
         try {
             // Obtener registros de la tabla músico
-            $sql = "SELECT nombre_musico, fecha_nac, fecha_muerte, historia_de_vida, foto FROM musico";
+            $sql = "SELECT nombre_musico, fecha_nac, fecha_muerte, historia_de_vida, foto, genero FROM musico";
             $query = $pdo->prepare($sql);
             $query->execute();
 
@@ -93,6 +93,8 @@
                     echo '<p><strong>Fecha de nacimiento:</strong> ' . $registro->fecha_nac . '</p>';
                     echo '<p><strong>Fecha de muerte:</strong> ' . $registro->fecha_muerte . '</p>';
                     echo '<p><strong>Historia de vida:</strong> ' . $registro->historia_de_vida . '</p>';
+                    echo '<p><strong>Genero:</strong> ' . $registro->genero . '</p>';
+                    echo '<a href="musicoAgeneroObra.php?dato=' . urlencode($registro->genero. ',' . $registro->nombre_musico) . '">Obras y genero del musico</a>';
                     echo '</div>';
                 }
             } else {

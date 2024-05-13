@@ -76,7 +76,7 @@
 
         try {
             // Obtener registros de la tabla género
-            $sql = "SELECT nombre_genero, caracteristica_g, origen, foto FROM genero";
+            $sql = "SELECT nombre_genero, caracteristica_g, origen, foto, instrumento FROM genero";
             $query = $pdo->prepare($sql);
             $query->execute();
 
@@ -92,7 +92,8 @@
                     echo '<img src="' . $registro->foto . '" alt="No hay imagen del genero" style="width: 250px; height: 200px;">';
                     echo '<p><strong>Característica:</strong> ' . $registro->caracteristica_g . '</p>';
                     echo '<p><strong>Origen:</strong> ' . $registro->origen . '</p>';
-                    echo '</div>';
+                    echo '<p><strong>Instrumentos:</strong> ' . $registro->instrumento . '</p>';
+                    echo '<a href="generoAtodo.php?dato=' . urlencode($registro->origen. ',' . $registro->instrumento. ',' . $registro->nombre_genero) . '">Mas informacion</a>';
                 }
             } else {
                 echo "No hay datos en la tabla.";

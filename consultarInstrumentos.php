@@ -76,7 +76,7 @@
 
         try {
             // Obtener registros de la tabla instrumento
-            $sql = "SELECT nombre_instrumento, creador, lugar_creacion, tipo, material, foto FROM instrumento";
+            $sql = "SELECT nombre_instrumento, creador, lugar_creacion, tipo, material, genero, foto FROM instrumento";
             $query = $pdo->prepare($sql);
             $query->execute();
 
@@ -94,6 +94,8 @@
                     echo '<p><strong>Lugar de creación:</strong> ' . $registro->lugar_creacion . '</p>';
                     echo '<p><strong>Tipo:</strong> ' . $registro->tipo . '</p>';
                     echo '<p><strong>Material:</strong> ' . $registro->material . '</p>';
+                    echo '<p><strong>Genero:</strong> ' . $registro->genero . '</p>';
+                    echo '<p><a href="generoDelInstrumento.php?genero=' . urlencode($registro->genero) . '">Generos del instrumento</a></p>';
                     echo '</div>';
                 }
             } else {
