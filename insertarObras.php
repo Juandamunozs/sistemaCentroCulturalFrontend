@@ -12,7 +12,7 @@ $foto = $_GET['foto'];
 try {
     // Preparar la instrucción de inserción
     $sql = "INSERT INTO obra_famosa (nombre_obra, partitura, ano_creacion, foto, musico, genero) VALUES (?, ?, ?, ?, ?, ?)";
-    
+    $comando = $pdo->prepare($sql);
     // Ejecutar la instrucción de inserción
     $comando->execute([$nombre_obra, $partitura, $ano_creacion, $foto, $musico, $genero]);
 

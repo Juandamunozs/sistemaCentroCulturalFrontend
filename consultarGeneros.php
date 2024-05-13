@@ -6,70 +6,71 @@
     <title>Géneros</title>
     <link rel="stylesheet" href="style.css"> <!-- Incluye tu archivo CSS externo -->
     <style>
-    /* Estilos para las cartas */
-    .card {
-        border: 1px solid purple; /* Borde morado */
-        border-radius: 30px;
-        padding: 10px;
-        margin: 10px;
-        width: 300px;
-        display: inline-block;
-        vertical-align: top;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        background-color: #6A5ACD; /* Fondo entre azul y morado */
-        color: white; /* Texto blanco */
-        transition: box-shadow 0.3s ease; /* Transición suave */
-    }
+        /* Estilos para las cartas */
+        .card {
+            border: 1px solid purple; /* Borde morado */
+            border-radius: 30px;
+            padding: 10px;
+            margin: 10px;
+            width: 300px;
+            display: inline-block;
+            vertical-align: top;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #6A5ACD; /* Fondo entre azul y morado */
+            color: white; /* Texto blanco */
+            transition: box-shadow 0.3s ease; /* Transición suave */
+        }
 
-    .card h2 {
-        margin-top: 0;
-        text-align: center; /* Centrar el texto */
-    }
+        .card h2 {
+            margin-top: 0;
+            text-align: center; /* Centrar el texto */
+        }
 
-    .card p {
-        margin-bottom: 5px;
-        text-align: left; /* Alinear a la izquierda */
-        margin-left: 10px; /* Añadir margen izquierdo para la información */
-    }
+        .card p {
+            margin-bottom: 5px;
+            text-align: left; /* Alinear a la izquierda */
+            margin-left: 10px; /* Añadir margen izquierdo para la información */
+        }
 
-    .card img {
-        display: block; /* Asegura que la imagen ocupe todo el ancho disponible */
-        margin: 0 auto; /* Centra la imagen horizontalmente */
-        border-radius: 10px; /* Añade un borde redondeado a la imagen */
-        max-width: 100%; /* Ajusta el tamaño máximo de la imagen */
-        height: auto; /* Mantiene la proporción de aspecto de la imagen */
-    }
+        .card img {
+            display: block; /* Asegura que la imagen ocupe todo el ancho disponible */
+            margin: 0 auto; /* Centra la imagen horizontalmente */
+            border-radius: 10px; /* Añade un borde redondeado a la imagen */
+            max-width: 100%; /* Ajusta el tamaño máximo de la imagen */
+            height: auto; /* Mantiene la proporción de aspecto de la imagen */
+        }
 
-    /* Cambiar el color del borde y hacer que brille al pasar el mouse */
-    .card:hover {
-        border-color: #ffcc00; /* Borde amarillo */
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
-    }
+        /* Cambiar el color del borde y hacer que brille al pasar el mouse */
+        .card:hover {
+            border-color: #ffcc00; /* Borde amarillo */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+        }
 
-    /* Estilos para el fondo del HTML */
-    body {
-        background-color: #ffffff; /* Fondo blanco */
-    }
-    
+        /* Estilos para el fondo del HTML */
+        body {
+            background-color: #ffffff; /* Fondo blanco */
+        }
+
         /* Clase para estilizar el título */
         .title {
-    text-align: center; /* Centra el texto */
-    color: #000000; /* Color negro para el texto */
-    background-color: #ffffff; /* Fondo blanco */
-    padding: 10px; /* Añade espacio alrededor del texto */
-    border-radius: 30px; /* Añade bordes redondeados */
-    } 
+            text-align: center; /* Centra el texto */
+            color: #000000; /* Color negro para el texto */
+            background-color: #ffffff; /* Fondo blanco */
+            padding: 10px; /* Añade espacio alrededor del texto */
+            border-radius: 30px; /* Añade bordes redondeados */
+        }
 
-</style>
+        /* Estilos para el contenedor */
+        .container {
+            text-align: center;
+            white-space: nowrap; /* Evita que las cartas se envuelvan */
+            overflow-x: auto; /* Agrega desplazamiento horizontal si las cartas no caben en la pantalla */
+        }
+    </style>
 </head>
 <body>
-<h1 class="title">Información de genero</h1>
+    <h1 class="title">Información de género</h1>
     <button id="button1">Regresar</button>
-        <script>
-            document.getElementById("button1").addEventListener("click", function() {
-                window.location.href = "index.html";
-            });
-        </script>
     <div class="container">
         <?php
         include 'conectar.php';
@@ -89,11 +90,12 @@
                 foreach ($consulta as $registro) {
                     echo '<div class="card">';
                     echo '<h2>' . $registro->nombre_genero . '</h2>';
-                    echo '<img src="' . $registro->foto . '" alt="No hay imagen del genero" style="width: 250px; height: 200px;">';
+                    echo '<img src="' . $registro->foto . '" alt="No hay imagen del género" style="width: 250px; height: 200px;">';
                     echo '<p><strong>Característica:</strong> ' . $registro->caracteristica_g . '</p>';
                     echo '<p><strong>Origen:</strong> ' . $registro->origen . '</p>';
                     echo '<p><strong>Instrumentos:</strong> ' . $registro->instrumento . '</p>';
-                    echo '<a href="generoAtodo.php?dato=' . urlencode($registro->origen. ',' . $registro->instrumento. ',' . $registro->nombre_genero) . '">Mas informacion</a>';
+                    echo '<a href="generoAtodo.php?dato=' . urlencode($registro->origen. ',' . $registro->instrumento. ',' . $registro->nombre_genero) . '">Más información</a>';
+                    echo '</div>';
                 }
             } else {
                 echo "No hay datos en la tabla.";
@@ -105,7 +107,12 @@
         ?>
     </div>
     <footer>
-        </script>
+       
     </footer>
+    <script>
+        document.getElementById("button1").addEventListener("click", function() {
+            window.location.href = "index.html";
+        });
+    </script>
 </body>
 </html>
