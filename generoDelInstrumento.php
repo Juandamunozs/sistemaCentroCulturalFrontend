@@ -69,7 +69,7 @@
 </head>
 <body>
     <h1 class="title">Géneros Musicales</h1>
-    <button id="button1">Regresar</button>
+    <button id="button2">Regresar</button>
     <div class="container">
         <?php
         include 'conectar.php';
@@ -108,12 +108,10 @@
         }
         ?>
     </div>
-    <footer>
-        <script>
-            document.getElementById("button1").addEventListener("click", function() {
-                window.location.href = "index.html";
-            });
-        </script>
-    </footer>
+    <script>
+        document.getElementById("button2").addEventListener("click", function() {
+            window.history.back();
+        });
+    </script>
 </body>
 </html>
