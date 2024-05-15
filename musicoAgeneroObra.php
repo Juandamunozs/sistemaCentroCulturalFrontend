@@ -100,8 +100,6 @@
                         echo '<p><strong>Característica:</strong> ' . $registro->caracteristica_g . '</p>';
                         echo '<p><strong>Origen:</strong> ' . $registro->origen . '</p>';
                         echo '<p><strong>Instrumentos:</strong> ' . $registro->instrumento . '</p>';
-                        echo '<p><a href="epocaDelGenero.php?origen=' . urlencode($registro->origen) . '">Epoca del genero</a></p>';
-                        echo '<p><a href="instrumentosDelGenero.php?instrumento=' . urlencode($registro->instrumento) . '">Instrumento del genero</a></p>';
                         echo '</div>';
                     }
                 } else {

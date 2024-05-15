@@ -19,6 +19,12 @@
         background-color: #6A5ACD; /* Fondo entre azul y morado */
         color: white; /* Texto blanco */
         transition: box-shadow 0.3s ease; /* Transición suave */
+        text-decoration: none; /* Quitar subrayado predeterminado para el enlace */
+    }
+
+    .card:hover {
+        border-color: #ffcc00; /* Borde amarillo */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
     }
 
     .card h2 {
@@ -40,17 +46,11 @@
         height: auto; /* Mantiene la proporción de aspecto de la imagen */
     }
 
-    /* Cambiar el color del borde y hacer que brille al pasar el mouse */
-    .card:hover {
-        border-color: #ffcc00; /* Borde amarillo */
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
-    }
-
     /* Estilos para el fondo del HTML */
     body {
         background-color: #ffffff; /* Fondo blanco */
     }
-
+    
         /* Clase para estilizar el título */
         .title {
     text-align: center; /* Centra el texto */
@@ -59,7 +59,11 @@
     padding: 10px; /* Añade espacio alrededor del texto */
     border-radius: 30px; /* Añade bordes redondeados */
     } 
-
+    /* .container {
+            text-align: center;
+            white-space: nowrap; // Evita que las cartas se envuelvan 
+            overflow-x: auto; // Agrega desplazamiento horizontal si las cartas no caben en la pantalla 
+        }*/
 </style>
 </head>
 <body>
@@ -87,7 +91,8 @@
             if ($query->rowCount() > 0) {
                 // Mostrar los datos como cartas
                 foreach ($consulta as $registro) {
-                    echo '<div class="card">';
+                    echo '<a href="generoDelInstrumento.php?genero=' . urlencode($registro->genero) . '" class="card">';
+                    echo '<div>';
                     echo '<h2>' . $registro->nombre_instrumento . '</h2>';
                     echo '<img src="' . $registro->foto . '" alt="No hay imagen del instrumento" style="width: 250px; height: 200px;">';
                     echo '<p><strong>Creador:</strong> ' . $registro->creador . '</p>';
@@ -95,8 +100,8 @@
                     echo '<p><strong>Tipo:</strong> ' . $registro->tipo . '</p>';
                     echo '<p><strong>Material:</strong> ' . $registro->material . '</p>';
                     echo '<p><strong>Genero:</strong> ' . $registro->genero . '</p>';
-                    echo '<p><a href="generoDelInstrumento.php?genero=' . urlencode($registro->genero) . '">Generos del instrumento</a></p>';
                     echo '</div>';
+                    echo '</a>';
                 }
             } else {
                 echo "No hay datos en la tabla.";

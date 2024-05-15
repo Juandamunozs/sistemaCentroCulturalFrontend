@@ -19,6 +19,12 @@
         background-color: #6A5ACD; /* Fondo entre azul y morado */
         color: white; /* Texto blanco */
         transition: box-shadow 0.3s ease; /* Transición suave */
+        text-decoration: none; /* Quitar subrayado predeterminado para el enlace */
+    }
+
+    .card:hover {
+        border-color: #ffcc00; /* Borde amarillo */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
     }
 
     .card h2 {
@@ -38,12 +44,6 @@
         border-radius: 10px; /* Añade un borde redondeado a la imagen */
         max-width: 100%; /* Ajusta el tamaño máximo de la imagen */
         height: auto; /* Mantiene la proporción de aspecto de la imagen */
-    }
-
-    /* Cambiar el color del borde y hacer que brille al pasar el mouse */
-    .card:hover {
-        border-color: #ffcc00; /* Borde amarillo */
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
     }
 
     /* Estilos para el fondo del HTML */
@@ -82,14 +82,15 @@
             if ($query->rowCount() > 0) {
                 // Mostrar los datos como cartas
                 foreach ($consulta as $registro) {
-                    echo '<div class="card">';
+                    echo '<a href="generosDeLaEpoca.php?epoca=' . urlencode($registro->comienzo. ',' . $registro->final) . '" class="card">';
+                    echo '<div>';
                     echo '<h2>' . $registro->nombre_epoca . '</h2>';
                     echo '<img src="' . $registro->foto . '" alt="No hay imagen de la época" style="width: 250px; height: 200px;">';
                     echo '<p><strong>Característica:</strong> ' . $registro->caracteristica_e . '</p>';
                     echo '<p><strong>Comienzo:</strong> ' . $registro->comienzo . '</p>';
                     echo '<p><strong>Final:</strong> ' . $registro->final . '</p>';
-                    echo '<a href="generosDeLaEpoca.php?epoca=' . urlencode($registro->comienzo. ',' . $registro->final) . '">Generos de la epoca</a>';
                     echo '</div>';
+                    echo '</a>';
                 }
             } else {
                 echo "No hay datos en la tabla.";
