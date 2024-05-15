@@ -100,7 +100,7 @@
                     echo '</div>';
                 }
             } else {
-                echo "No hay datos en la tabla para el género seleccionado.";
+                echo "No hay datos generos";
             }
         } catch (PDOException $e) {
             // Capturar y mostrar cualquier excepción de PDO

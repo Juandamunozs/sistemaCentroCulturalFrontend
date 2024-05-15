@@ -109,7 +109,7 @@
                         echo '</div>';
                     }
                 } else {
-                    echo "No se encontró el músico especificado.";
+                    echo "No se encontró el músico";
                 }
             } catch (PDOException $e) {
                 // Capturar y mostrar cualquier excepción de PDO
@@ -139,7 +139,7 @@
                         echo '</div>';
                     }
                 } else {
-                    echo "No se encontró el género especificado.";
+                    echo "No se encontró el género";
                 }
             } catch (PDOException $e) {
                 // Capturar y mostrar cualquier excepción de PDO

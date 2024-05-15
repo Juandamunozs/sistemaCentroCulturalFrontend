@@ -72,7 +72,7 @@
 </style>
 </head>
 <body>
-    <h1 class="title">Informacion del genero</h1>
+    <h1 class="title">Información del genero</h1>
     <button id="button2">Regresar</button>
     <div class="container">
         <?php
@@ -110,7 +110,7 @@
                         echo '</div>';
                     }
                 } else {
-                    echo "No se encontró la época especificada.";
+                    echo "No se encontró epoca";
                 }
             } catch (PDOException $e) {
                 // Capturar y mostrar cualquier excepción de PDO
@@ -141,7 +141,7 @@
                         echo '</div>';
                     }
                 } else {
-                    echo "No se encontró el instrumento especificado.";
+                    echo "No se encontró instrumento";
                 }
             } catch (PDOException $e) {
                 // Capturar y mostrar cualquier excepción de PDO
@@ -172,7 +172,7 @@
                     echo '</div>';
                     }
                 } else {
-                    echo "No se encontró el instrumento especificado.";
+                    echo "No se encontró obra famosa";
                 }
             } catch (PDOException $e) {
                 // Capturar y mostrar cualquier excepción de PDO

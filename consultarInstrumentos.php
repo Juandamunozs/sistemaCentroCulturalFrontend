@@ -110,7 +110,7 @@
                     echo '</a>';
                 }
             } else {
-                echo "No hay datos en la tabla.";
+                echo "No hay datos de instrumentos.";
             }
         } catch (PDOException $e) {
             // Capturar y mostrar cualquier excepción de PDO

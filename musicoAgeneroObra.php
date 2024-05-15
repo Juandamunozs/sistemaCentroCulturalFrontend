@@ -114,7 +114,7 @@
                         echo '</div>';
                     }
                 } else {
-                    echo "No se encontró el genero";
+                    echo "No se encontró genero";
                 }
             } catch (PDOException $e) {
                 // Capturar y mostrar cualquier excepción de PDO

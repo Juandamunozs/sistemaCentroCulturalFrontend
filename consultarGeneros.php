@@ -103,7 +103,7 @@
                     echo '</a>';
                 }
             } else {
-                echo "No hay datos en la tabla.";
+                echo "No hay datos del genero.";
             }
         } catch (PDOException $e) {
             // Capturar y mostrar cualquier excepción de PDO

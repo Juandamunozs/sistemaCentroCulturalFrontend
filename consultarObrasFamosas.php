@@ -109,7 +109,7 @@
                     echo '</a>';
                 }
             } else {
-                echo "No hay datos en la tabla.";
+                echo "No hay datos de obras famosas";
             }
         } catch (PDOException $e) {
             // Capturar y mostrar cualquier excepción de PDO
