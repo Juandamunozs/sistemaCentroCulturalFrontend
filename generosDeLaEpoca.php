@@ -42,8 +42,9 @@
 
     /* Cambiar el color del borde y hacer que brille al pasar el mouse */
     .card:hover {
-        border-color: #ffcc00; /* Borde amarillo */
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+         filter: brightness(1.2);
+         transform: scale(1.01);
+         border: 1px solid #6e29c9;
     }
 
     /* Estilos para el fondo del HTML */
