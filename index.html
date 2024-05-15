@@ -5,14 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centro Cultural</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos para el contenedor de los botones */
+        .button-container {
+            background-color: white; /* Fondo blanco */
+            padding: 20px; /* Espacio alrededor de los botones */
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            margin-top: 20px; /* Espacio arriba del contenedor */
+            border: 2px solid #007bff; /* Borde azul */
+        }
+    </style>
 </head>
-<div class="container blue-background">
-    <button id="button1">Ver tabla de épocas</button>
-    <button id="button2">Ver tabla de géneros</button>
-    <button id="button3">Ver tabla de instrumentos</button>
-    <button id="button4">Ver tabla de músicos</button>
-    <button id="button5">Ver tabla de obras famosas</button>
-</div>
+<body style="background-image: url('https://www.educaciontrespuntocero.com/wp-content/uploads/2019/10/libros-musica-978x652.jpg');">
+    <div class="container blue-background">
+        <div class="button-container"> <!-- Contenedor de los botones -->
+            <button id="button1">Ver épocas</button>
+            <button id="button2">Ver géneros</button>
+            <button id="button3">Ver instrumentos</button>
+            <button id="button4">Ver músicos</button>
+            <button id="button5">Ver obras famosas</button>
+        </div>
+    </div>
     <script>
         document.getElementById("button1").addEventListener("click", function() {
             window.location.href = "consultarEpocas.php";

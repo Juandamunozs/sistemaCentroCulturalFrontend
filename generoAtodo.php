@@ -46,18 +46,23 @@
     }
 
     /* Estilos para el fondo del HTML */
-    body {
-        background-color: #ffffff; /* Fondo blanco */
-    }
-    
-    /* Clase para estilizar el título */
     .title {
-        text-align: center; /* Centra el texto */
-        color: #000000; /* Color negro para el texto */
-        background-color: #ffffff; /* Fondo blanco */
-        padding: 10px; /* Añade espacio alrededor del texto */
-        border-radius: 30px; /* Añade bordes redondeados */
-    } 
+         text-align: center; /* Centra el texto */
+         color: #000000; /* Color negro para el texto */
+         background-color: #ffffff; /* Fondo blanco */
+         padding: 10px; /* Añade espacio alrededor del texto */
+         border-radius: 30px; /* Añade bordes redondeados */
+         border: 1px solid #007bff; /* Agrega borde azul */
+         margin: 20px; /* Añade margen */
+}
+
+        /* Establecer imagen de fondo */
+        body {
+            background-image: url('https://img.freepik.com/vector-premium/fondo-colorido-notas-musicales-cartel-que-dice-musica_661108-4178.jpg');
+            background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+            background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+            background-attachment: fixed; /* Fija la imagen de fondo para que no se desplace con el contenido */
+        }
 
     /* Estilos para el contenedor de las cartas */
     .container {

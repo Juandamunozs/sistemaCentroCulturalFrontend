@@ -12,12 +12,12 @@ button {
 }
 
 .blue-background {
-    background-color: blue;
-    color: aqua;
+    background-color: rgb(241, 241, 245);
+    color: rgb(231, 238, 238);
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #f2f3f3;
 }
 
 /* Estilos para el contenedor principal */
@@ -27,28 +27,4 @@ button:hover {
     text-align: center; /* Centrar el contenido del contenedor */
 }
 
-/* Estilos para la tabla dentro del contenedor */
-.container table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: white !important; /* Fondo blanco para la tabla */
-}
-
-/* Estilos para las celdas de encabezado y datos */
-.container th, .container td {
-    padding: 12px;
-    border: 1px solid #ddd;
-    text-align: left;
-    background-color: white !important; /* Fondo blanco para las celdas */
-}
-
-/* Estilos para las celdas de encabezado */
-.container th {
-    background-color: #f2f2f2;
-}
-
-/* Estilos para filas pares */
-.container tr:nth-child(even) {
-    background-color: white !important; /* Fondo blanco para las filas pares */
-}
 

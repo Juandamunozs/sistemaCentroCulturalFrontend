@@ -52,12 +52,22 @@
     
     /* Clase para estilizar el título */
     .title {
-        text-align: center; /* Centra el texto */
-        color: #000000; /* Color negro para el texto */
-        background-color: #ffffff; /* Fondo blanco */
-        padding: 10px; /* Añade espacio alrededor del texto */
-        border-radius: 30px; /* Añade bordes redondeados */
-    } 
+         text-align: center; /* Centra el texto */
+         color: #000000; /* Color negro para el texto */
+         background-color: #ffffff; /* Fondo blanco */
+         padding: 10px; /* Añade espacio alrededor del texto */
+         border-radius: 30px; /* Añade bordes redondeados */
+         border: 1px solid #007bff; /* Agrega borde azul */
+         margin: 20px; /* Añade margen */
+}
+
+        /* Establecer imagen de fondo */
+        body {
+            background-image: url('https://images.unsplash.com/photo-1499415479124-43c32433a620?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG11c2ljJTIwd2FsbHBhcGVyfGVufDB8fDB8fHww');
+            background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+            background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+            background-attachment: fixed; /* Fija la imagen de fondo para que no se desplace con el contenido */
+        }
 
     /* Estilos para el contenedor de las cartas */
     .container {
